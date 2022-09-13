@@ -300,12 +300,7 @@ okGameOver.addEventListener('click', e => {
 
 btnNewGame.addEventListener('click', e => {
   e.preventDefault();
-  console.log("Doy click en Nuevo Juego");
-  console.log("Reseteo luego de dar click en el botón Nuevo Juego");
-  console.log({ intentosCorrectos });
   reset();
-  console.log({ intentosCorrectos });
-  console.log("Llamo a la función Start Game");
   startGame();
 });
 
