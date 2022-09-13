@@ -216,7 +216,7 @@ function reset() {
 
   intentosCorrectos = 0;
   intentosIncorrectos = 0;
-  intentosPermitidos = 6;
+  intentosPermitidos = 7;
   intentosNecesarios = [];
   letters = [];
 }
