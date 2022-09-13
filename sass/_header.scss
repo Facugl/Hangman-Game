@@ -1,0 +1,41 @@
+@use 'mixfun';
+
+.header {
+  @include mixfun.flex(flex, column, center, flex-start);
+  gap: 4rem;
+  margin-top: 1.6rem;
+  min-height: 10vh;
+
+  &__logo {
+    width: 2.5em;
+    height: auto;
+    margin-left: 1.6rem;
+  }
+
+  &__title {
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 11vw;
+    color: var(--blue-color);
+    -webkit-text-stroke: .1rem #000;
+    letter-spacing: .1rem;
+    margin: 0 auto;
+
+    @include mixfun.medium {
+      font-size: 84.48px;
+    }
+
+    @include mixfun.large() {
+      font-size: 84.48px;
+    }
+  }
+
+  @include mixfun.medium() {
+    margin: .8rem auto 1.6rem;
+  }
+
+  @include mixfun.large() {
+    margin: .8rem auto 1.6rem;
+    max-width: 120rem;
+  }
+}

@@ -1,0 +1,770 @@
+@use 'mixfun';
+
+.main {
+  @include mixfun.container();
+  @include mixfun.flex(flex, column, center, center);
+  min-height: 60vh;
+  font-size: 1.6rem;
+
+  .start {
+    @include mixfun.flex(flex, column, center, center);
+    // display: none;
+
+    .form--start {
+      display: inline-block;
+      width: 100%;
+
+      &__label {
+        margin: 3rem 0 1rem;
+        font-weight: 700;
+        color: var(--white-color);
+      }
+
+      &__select {
+        width: 100%;
+        height: 4rem;
+        border: none;
+        border-radius: .5rem;
+        padding: .5rem;
+        margin-bottom: 1.6rem;
+        background-color: var(--white-color);
+
+        &:focus {
+          outline-color: var(--primary-color);
+        }
+      }
+
+      .button-add {
+        @include mixfun.button();
+        background-color: var(--third-color);
+        color: var(--white-color);
+        transition: all .3s ease-in;
+        border-radius: 1rem;
+
+        &:hover {
+          box-shadow: 0 0 .8rem  .2rem var(--gray-color);
+        }
+      }
+
+      &__text {
+        color: var(--white-color);
+        font-size: 1.2rem;
+        margin-top: .8rem;
+        opacity: .7;
+      }
+
+      .button-start {
+        @include mixfun.button();
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        animation: btn-start 4s infinite;
+        margin-top: 6rem;
+
+        @keyframes btn-start {
+          5%,
+          50% {
+            transform: scale(1);
+          }
+        
+          10% {
+            transform: scale(1);
+          }
+        
+          15% {
+            transform: scale(1);
+          }
+        
+          20% {
+            transform: scale(1) rotate(-5deg);
+          }
+        
+          25% {
+            transform: scale(1) rotate(5deg);
+          }
+        
+          30% {
+            transform: scale(1) rotate(-3deg);
+          }
+        
+          35% {
+            transform: scale(1) rotate(2deg);
+          }
+        
+          40% {
+            transform: scale(1) rotate(0);
+          }
+        }
+      }
+
+      @include mixfun.small() {
+        width: 431.08px;
+      }
+
+      @include mixfun.medium() {
+        width: 431.08px;
+      }
+
+      @include mixfun.large() {
+        width: 431.08px;
+      }
+    }
+  }
+
+  .add {
+    @include mixfun.flex(flex, column, center, center);
+    display: none;
+    @include mixfun.medium() {
+      width: 431.08px;
+      margin: 0 auto;
+    }
+    
+    @include mixfun.large() {
+      width: 431.08px;
+      margin: 0 auto;
+    }
+
+    .form--add {
+      width: 100%;
+
+      &__label {
+        margin-bottom: .8rem;
+        font-weight: 700;
+        color: var(--white-color);
+      }
+
+      &__input {
+        margin-bottom: .8rem;
+        padding: 1rem;
+        border: none;
+        border-radius: .5rem;
+        caret-color: var(--primary-color);
+        color: var(--primary-color);
+        background-color: var(--white-color);
+        display: inline;
+        width: 20rem;
+
+        @include mixfun.medium() {
+          width: 326.08px;
+        }
+
+        @include mixfun.large() {
+          width: 326.08px;
+        }
+
+        &::placeholder,
+        &:target {
+          color: var(--primary-color);
+          opacity: .7;
+        }
+      }
+
+      &__button {
+        @include mixfun.button();
+          width: 10rem;
+          border-radius: .5rem;
+          background-color: var(--third-color);
+          color: var(--white-color);
+          margin: .5rem auto 0rem;
+          padding: 1rem;
+          display: inline;
+
+          @include mixfun.medium() {
+            width: 10rem;
+            display: inline;
+          }
+
+          @include mixfun.large() {
+            width: 10rem;
+            display: inline;
+          }
+        }
+
+      .suggestion {
+        @include mixfun.flex(flex, row, flex-start, center);
+        color: var(--white-color);
+        font-size: 1.4rem;
+        opacity: .7;
+        margin-bottom: 4rem;
+
+        &__img {
+          width: 1.2rem;
+          margin-right: .8rem;
+          fill: var(--white-color);
+        }
+      }
+
+      .msg {
+        width: 30rem;
+        height: 15.9rem;
+        margin: 0 auto;
+        visibility: visible;
+
+        &--invalid {
+          @include mixfun.flex(flex, column, center, center);
+          width: 30rem;
+          margin: 0 auto;
+          padding: 2rem;
+          background-color: var(--white-color);
+          border-radius: 2rem;
+          border: .2rem solid var(--error-color);
+          gap: 2rem;
+          display: none;
+  
+          &__text {
+            @include mixfun.flex(flex, row, center, center);
+            color: var(--error-color);
+            font-size: 1.8rem;
+          }
+  
+          &__img {
+            width: 3rem;
+            height: 3rem;
+            position: relative;
+  
+            & img {
+              position: absolute;
+              top: -.5rem;
+              left: 0;
+            }
+          }
+  
+          .button {
+            @include mixfun.button();
+            width: 50%;
+            border-radius: 2.4rem;
+            background-color: var(--error-color);
+            color: var(--white-color);
+            display: block;
+          }
+        }
+  
+        &--included {
+          @include mixfun.flex(flex, column, center, center);
+          width: 30rem;
+          margin: 0 auto;
+          padding: 2rem;
+          background-color: var(--white-color);
+          border-radius: 2rem;
+          border: .2rem solid var(--error-color);
+          gap: 2rem;
+          display: none;
+  
+          &__text {
+            @include mixfun.flex(flex, row, center, center);
+            color: var(--error-color);
+            font-size: 1.8rem;
+            text-align: center;
+          }
+  
+          .button {
+            @include mixfun.button();
+            width: 50%;
+            border-radius: 2.4rem;
+            background-color: var(--error-color);
+            color: var(--white-color);
+            display: block;
+          }
+        }
+  
+        &--add {
+          @include mixfun.flex(flex, column, center, center);
+          width: 30rem;
+          margin: 0 auto;
+          padding: 2rem;
+          background-color: var(--white-color);
+          border-radius: 2rem;
+          border: .2rem solid var(--letter-correct-color);
+          gap: 2rem;
+          display: none;
+  
+          &__text {
+            @include mixfun.flex(flex, row, center, center);
+            color: var(--letter-correct-color);
+            font-size: 1.8rem;
+            text-align: center;
+          }
+  
+          .button {
+            @include mixfun.button();
+            width: 50%;
+            border-radius: 2.4rem;
+            background-color: var(--letter-correct-color);
+            color: var(--white-color);
+            display: block;
+          }
+        }
+      }
+
+      .buttons {
+        @include mixfun.flex(flex, column, center, center);
+        margin: 4rem 0;
+        gap: 3rem;
+        width: 100%;
+
+        @include mixfun.small() {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        @include mixfun.medium() {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        @include mixfun.large() {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        &__button--save {
+          @include mixfun.button();
+          background-color: var(--primary-color);
+          color: var(--white-color);
+
+          &:hover {
+            box-shadow: 0 0 .8rem .2rem var(--gray-color);
+          }
+
+          @include mixfun.small() {
+            width: 77%;
+            margin: 0;
+          }
+
+          @include mixfun.medium() {
+            width: 181.05px;
+            margin: 0;
+          }
+
+          @include mixfun.large() {
+            width: 181.05px;
+            margin: 0;
+          }
+        }
+
+        &__button--cancel {
+          @include mixfun.button();
+          background-color: var(--secondary-color);
+          color: var(--white-color);
+
+          &:hover {
+            box-shadow: 0 0 .8rem .2rem var(--gray-color);
+          }
+
+          @include mixfun.small() {
+            width: 42%;
+            margin: 0;
+          }
+
+          @include mixfun.medium() {
+            width: 181.05px;
+            margin: 0;
+          }
+
+          @include mixfun.large() {
+            width: 181.05px;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .game {
+    @include mixfun.flex(flex, column, center, center);
+    gap: 2rem;
+    display: none;
+    
+    &__category {
+      @include mixfun.flex(flex, row,center, center);
+      font-size: 1.8rem;
+      color: var(--white-color);
+
+      @include mixfun.medium() {
+        margin-bottom: 2rem;
+      }
+
+      @include mixfun.large() {
+        margin-bottom: 2rem;
+      }
+
+      span {
+        text-transform: uppercase;
+        margin-left: 1rem;
+        font-size: 2.2rem;
+        font-weight: 700;
+        position: relative;
+        letter-spacing: .2rem;
+
+        &::before {
+          content: '';
+          height: 1rem;
+          width: 110%;
+          background-color: var(--asset-color);
+          display: block;
+          position: absolute;
+          top: 1.5rem;
+          left: -.2rem;
+          z-index: -1;
+        }
+      }
+    }
+
+    &__img {
+      width: 30rem;
+      height: 30rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include mixfun.medium() {
+        width: 45rem;
+        height: 45rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      @include mixfun.large() {
+        width: 45rem;
+        height: 45rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &__failures {
+      @include mixfun.flex(flex, row, center, center);
+      color: var(--white-color);
+      margin: 0 auto 2rem;
+
+      @include mixfun.medium() {
+        margin-top: 2rem;
+      }
+
+      @include mixfun.large() {
+        margin-top: 2rem;
+      }
+    }
+
+    &__counter {
+      display: inline;
+    }
+
+    .green {
+      color: lime;
+      font-weight: 700;
+    }
+    
+    .orange {
+      color: #ff4600;
+      font-weight: 700;
+    }
+    
+    .red {
+      color: red;
+      font-weight: 700;
+    }
+
+    @include mixfun.medium() {
+      gap: 0;
+    }
+
+    @include mixfun.large() {
+      gap: 0;
+      width: 45rem;
+    }
+  }
+  
+  .word {
+    @include mixfun.flex(flex, column, center, center);
+    display: none;
+
+    &__random {
+      @include mixfun.flex(flex, row, center, center);
+      gap: .5rem;
+      height: 4.2rem;
+      width: 100%;
+      
+      .letter {
+        @include mixfun.flex(flex, column, center, center);
+        gap: .8rem;
+
+        &__value {
+          font-size: 3rem;
+          font-weight: 700;
+          width: 3rem;
+          height: 3rem;
+          border: none;
+          text-align: center;
+          color: var(--primary-color);
+          visibility: hidden;
+        }
+
+        &__line {
+          width: 3rem;
+          height: .4rem;
+          background-color: var(--primary-color);
+          border-radius: .2rem;
+        }
+      }
+
+      @include mixfun.medium() {
+        margin-bottom: 5rem;
+      }
+
+      @include mixfun.large() {
+        margin-bottom: 5rem;
+      }
+    }
+
+    .abc {
+      @include mixfun.flex(flex, row, center, center);
+      width: 100%;
+      gap: .3rem;
+      flex-wrap: wrap;
+      padding: 1rem;
+      margin: 3rem 0rem;
+      border-radius: .5rem;
+      background: rgba(36, 200, 200, 0.04);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(2.8px);
+      -webkit-backdrop-filter: blur(2.8px);
+
+      @include mixfun.medium() {
+        padding: 2rem;
+      }
+
+      @include mixfun.large() {
+        padding: 2rem;
+      }
+
+      &__letter {
+        width: 8vw;
+        height: 8vw;
+        font-weight: 700;
+        padding: .2rem;
+        border: none;
+        border-radius: .5rem;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+
+        &--correct {
+          background-color: var(--letter-correct-color);
+        }
+
+        &--incorrect {
+          background-color: var(--letter-incorrect-color);
+        }
+
+        @include mixfun.small() {
+          width: 36px;
+          height: 36px;
+        }
+
+        @include mixfun.medium() {
+          width: 36px;
+          height: 36px;
+          border-radius: .8rem;
+        }
+
+        @include mixfun.large() {
+          width: 36px;
+          height: 36px;
+          border-radius: .8rem;
+        }
+      }
+
+      @include mixfun.medium() {
+        width: 431.08px;
+      }
+
+      @include mixfun.large() {
+        width: 431.08px;
+      }
+    }
+
+    .msg--game{
+      width: 35rem;
+      height:  20rem;
+      visibility: visible;
+
+      .game--over {
+        @include mixfun.flex(flex, column, center, center);
+        width: 30rem;
+        height: 20rem;
+        padding: 1.6rem;
+        margin: 0 auto;
+        gap: 2rem;
+        border: .2rem solid var(--error-color);
+        border-radius: 2rem;
+        box-shadow: var(--shadow);
+        background: var(--white-color);
+        display: none;
+  
+        @include mixfun.large() {
+          width: 35rem;
+          height: 15rem;
+          gap: 0;
+        }
+  
+        &__text {
+          @include mixfun.flex(flex, row, center, center);
+          font-size: 2.4rem;
+          font-weight: 700;
+          color: var(--error-color);
+          gap: 1rem;
+        }
+  
+        &__images {
+          @include mixfun.flex(flex, row, center, center);
+          margin: 1.5rem 0;
+          gap: 1rem;
+        }
+  
+        &__solution {
+          @include mixfun.flex(flex, row, center, center);
+          top: 2rem;
+          left: 0;
+          margin-bottom: .4rem;
+          margin-right: .6rem;
+          color: var(--error-color);
+  
+          @include mixfun.large() {
+            margin-bottom: 1rem;
+          }
+  
+          span {
+            font-weight: 700;
+            letter-spacing: .2rem;
+            margin-left: 1rem;
+            color: var(--third-color);
+          }
+        }
+  
+        .button {
+          @include mixfun.button();
+          width: 50%;
+          border-radius: 2.4rem;
+          background-color: var(--error-color);
+          color: var(--white-color);
+          display: block;
+        }
+      }
+  
+      .game--win {
+        @include mixfun.flex(flex, column, center, center);
+        width: 30rem;
+        height: 20rem;
+        padding: 1.6rem;
+        margin: 0 auto;
+        gap: 2rem;
+        border: .2rem solid var(--letter-correct-color);
+        border-radius: 2rem;
+        box-shadow: var(--shadow);
+        background: var(--white-color);
+        display: none;
+  
+        @include mixfun.large() {
+          width: 35rem;
+          height: 15rem;
+        }
+  
+        &__text {
+          @include mixfun.flex(flex, column, center, center);
+          font-size: 2.4rem;
+          font-weight: 700;
+          color: var(--letter-correct-color);
+          gap: 1rem;
+  
+          @include mixfun.large() {
+            flex-direction: row;
+          }
+        }
+  
+        &__images {
+          @include mixfun.flex(flex, row, center, center);
+          gap: 1rem;
+        }
+  
+        .button {
+          @include mixfun.button();
+          width: 50%;
+          border-radius: 2.4rem;
+          background-color: var(--letter-correct-color);
+          color: var(--white-color);
+          display: block;
+        }
+      }
+    }
+
+    .buttons {
+      @include mixfun.flex(flex, column, center, center);
+      gap: 2rem;
+      margin-top: 3rem;
+      width: 100%;
+
+      &__button--new {
+        @include mixfun.button();
+        background-color: var(--primary-color);
+        color: var(--white-color);
+
+        @include mixfun.medium {
+          width: 181.05px;
+          margin: 0;
+        }
+
+        @include mixfun.large {
+          width: 181.05px;
+          margin: 0;
+        }
+      }
+
+      &__button--desist {
+        @include mixfun.button();
+        background-color: var(--secondary-color);
+        color: var(--white-color);
+
+        @include mixfun.medium {
+          width: 181.05px;
+          margin: 0;
+        }
+
+        @include mixfun.large {
+          width: 181.05px;
+          margin: 0;
+        }
+      }
+
+      @include mixfun.medium {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 431.08px;
+      }
+
+      @include mixfun.large {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 431.08px;
+      }
+    }
+
+    @include mixfun.medium() {
+      width: 45rem;
+    }
+
+    @include mixfun.large() {
+      width: 45rem;
+    }
+  }
+
+  @include mixfun.small {
+    width: 431.09px;
+  }
+
+  @include mixfun.medium {
+    flex-direction: row;
+  }
+
+  @include mixfun.large() {
+    flex-direction: row;
+  }
+}

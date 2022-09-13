@@ -1,0 +1,29 @@
+@use 'mixfun';
+
+.footer {
+  @include mixfun.flex(flex, column, center, center);
+  font-size: 1rem;
+  min-height: 10vh;
+  color: var(--white-color);
+  gap: 1rem;
+  margin-top: 5rem;
+
+  @include mixfun.small() {
+    font-size: 1.4rem;
+  }
+
+  @include mixfun.medium() {
+    flex-direction: row;
+    font-size: 1.6rem;
+  }
+  
+  @include mixfun.large() {
+    flex-direction: row;
+    font-size: 1.6rem;
+  }
+  
+  &__links {
+    @include mixfun.flex(flex, row, center, center);
+    gap: 1rem;
+  }
+}

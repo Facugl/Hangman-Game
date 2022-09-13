@@ -1,0 +1,41 @@
+@mixin container() {
+  width: 90%;
+  max-width: 1200px;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+@mixin flex($dis, $direction, $just, $align) {
+  display: $dis;
+  flex-direction: $direction;
+  justify-content: $just;
+  align-items: $align;
+}
+
+@mixin button() {
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+}
+
+@mixin small {
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (min-width: 769px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: 1201px) {
+    @content;
+  }
+}
