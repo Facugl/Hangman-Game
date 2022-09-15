@@ -93,6 +93,8 @@ function startGame() {
         }
         if (intentosCorrectos === intentosNecesarios.length) {
           msgGameWin.style.display = "flex";
+          btnNewGame.disabled = true;
+          abc.disabled = true;
         }
       } else {
         intentosIncorrectos++;
@@ -140,6 +142,8 @@ function startGame() {
             spanIncorrectos.classList.remove('orange');
             spanIncorrectos.classList.add('red');
             msgGameOver.style.display = "flex";
+            btnNewGame.disabled = true;
+            abc.disabled = true;
             break;
           default:
             imgDinamica.setAttribute('src', "./assets/munieco/juego-error-1.svg");
@@ -290,17 +294,22 @@ okAdd.addEventListener('click', e => {
 okGameWin.addEventListener('click', e => {
   e.preventDefault();
   msgGameWin.style.display = "none";
+  msgGameOver.style.display = "none";
+  btnNewGame.disabled = false;
   reset();
 });
 
 okGameOver.addEventListener('click', e => {
   e.preventDefault();
   msgGameOver.style.display = "none";
+  msgGameWin.style.display = "none";
+  btnNewGame.disabled = false;
   reset();
 });
 
 btnNewGame.addEventListener('click', e => {
   e.preventDefault();
+  abc.disabled = true;
   reset();
   startGame();
 });

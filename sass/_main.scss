@@ -3,7 +3,7 @@
 .main {
   @include mixfun.container();
   @include mixfun.flex(flex, column, center, center);
-  min-height: 60vh;
+  // min-height: 60vh;
   font-size: 1.6rem;
 
   .start {
@@ -494,24 +494,16 @@
           height: 3rem;
           border: none;
           text-align: center;
-          color: var(--primary-color);
+          color: var(--white-color);
           visibility: hidden;
         }
 
         &__line {
           width: 3rem;
           height: .4rem;
-          background-color: var(--primary-color);
+          background-color: var(--white-color);
           border-radius: .2rem;
         }
-      }
-
-      @include mixfun.medium() {
-        margin-bottom: 5rem;
-      }
-
-      @include mixfun.large() {
-        margin-bottom: 5rem;
       }
     }
 
@@ -744,6 +736,7 @@
         flex-direction: row;
         justify-content: space-between;
         width: 431.08px;
+        gap: 5rem;
       }
     }
 
@@ -762,9 +755,11 @@
 
   @include mixfun.medium {
     flex-direction: row;
+    justify-content: center;
   }
 
   @include mixfun.large() {
     flex-direction: row;
+    justify-content: center;
   }
 }

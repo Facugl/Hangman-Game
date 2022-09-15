@@ -3,7 +3,6 @@
 .footer {
   @include mixfun.flex(flex, column, center, center);
   font-size: 1rem;
-  min-height: 10vh;
   color: var(--white-color);
   gap: 1rem;
   margin-top: 5rem;
