@@ -85,6 +85,7 @@ function startGame() {
       if (letters.includes(letterUserValue)) {
         intentosCorrectos++;
         letterUser.classList.add('abc__letter--correct');
+        letterUser.disabled = true;
         for (let i = 0; i < letterValue.length; i++) {
           if (letterValue[i].innerHTML === letterUserValue) {
             letterValue[i].style.visibility = "visible";
