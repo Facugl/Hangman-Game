@@ -94,7 +94,10 @@ function startGame() {
         if (intentosCorrectos === intentosNecesarios.length) {
           msgGameWin.style.display = "flex";
           btnNewGame.disabled = true;
-          abc.disabled = true;
+          let abcLength = lettersABC.length
+          for (let i = 0; i < abcLength; i++) {
+            lettersABC[i].setAttribute('disabled', true);
+          }
         }
       } else {
         intentosIncorrectos++;
@@ -143,7 +146,10 @@ function startGame() {
             spanIncorrectos.classList.add('red');
             msgGameOver.style.display = "flex";
             btnNewGame.disabled = true;
-            abc.disabled = true;
+            let abcLength = lettersABC.length
+            for (let i = 0; i < abcLength; i++) {
+              lettersABC[i].setAttribute('disabled', true);
+            }
             break;
           default:
             imgDinamica.setAttribute('src', "./assets/munieco/juego-error-1.svg");
@@ -208,7 +214,6 @@ function reset() {
   lettersABC.forEach(letter => {
     letter.classList.remove('abc__letter--correct');
     letter.classList.remove('abc__letter--incorrect');
-    letter.disabled = false;
   });
 
   imgDinamica.setAttribute("src", "./assets/munieco/juego-error-1.svg");
@@ -309,8 +314,11 @@ okGameOver.addEventListener('click', e => {
 
 btnNewGame.addEventListener('click', e => {
   e.preventDefault();
-  abc.disabled = true;
   reset();
+  let abcLength = lettersABC.length
+  for (let i = 0; i < abcLength; i++) {
+    lettersABC[i].removeAttribute('disabled');
+  }
   startGame();
 });
 
